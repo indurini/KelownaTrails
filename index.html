@@ -24,6 +24,8 @@ SQAC114
 <html>
 
 <head>
+   
+
    <meta name="keywords" content="Kelowna, Wine, Tours, discount, trails">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -71,21 +73,22 @@ SQAC114
         get the IP Address of user*/
 
 	    
-var hostname = window. location. hostname;
-	    
-        $(document).ready(()=>{
-            $.getJSON("https://api.ipify.org?format=json",
-            function (data) {
- 
-                // Displayin IP address on screen
-                $("#gfg").html(hostname);
-            })
-        });
+$(document).ready(() => {
+    $.getJSON("https://api.ipify.org?format=json", function (data) {
+        $("#gfg").html("Your IP Address: " + data.ip);
+    });
+});
+
     </script>
    <title>DevOps Bonus Project - CCTB</title>
 </head>
 
 <body>
+   <h3>Student Name: Anuradha | Email: anu64murthy@gmail.com</h3>
+<div style="padding-left: 20px; padding-top: 35px;" class="copy">
+   Project by Anuradha | CCTB DevOps Course
+</div>
+
    <img src="images/bee2.gif" id="bee" style="position: absolute; left: -150; top: 0px;
             visibility:hidden;" alt="Flying bee" height="179" width="144" />
 
