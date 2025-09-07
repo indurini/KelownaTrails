@@ -34,7 +34,7 @@ pipeline {
         stage('Production') {
             steps {
                 echo 'Deploying to Firebase Hosting...'
-                sh 'firebase use statingkelowna-10026'
+                sh 'firebase use my-webapp-testing'
                 sh 'firebase deploy --only hosting --token $FIREBASE_TOKEN'
             }
         }
