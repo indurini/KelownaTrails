@@ -1,13 +1,8 @@
-// Jenkins Pipeline for KelownaTrails
-// NOTE for Students:
-// Firebase is deployed securely using Jenkins credentials.
-// Store your Firebase token as a Secret Text in Jenkins with ID "firebase-token".
-
 pipeline {
     agent any
 
     environment {
-        FIREBASE_TOKEN = credentials('firebase-token')   // Secret Text in Jenkins
+        FIREBASE_TOKEN = credentials('firebase-token') // stored in Jenkins
     }
 
     stages {
@@ -19,7 +14,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                echo 'This is testing.'
             }
         }
 
@@ -32,8 +27,7 @@ pipeline {
         stage('Production') {
             steps {
                 echo 'Deploying to Firebase Hosting...'
-                // Direct deploy with --project avoids firebase use/.firebaserc issues
-                sh 'firebase deploy --only hosting --project my-webapp-testing --token $FIREBASE_TOKEN'
+                sh 'firebase deploy --only hosting --project production --token $FIREBASE_TOKEN'
             }
         }
     }
