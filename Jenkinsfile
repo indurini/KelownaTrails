@@ -1,4 +1,10 @@
-
+// NOTE for Students:
+//
+// In this example, Firebase is being used securely using Jenkins credentials.
+// For real projects (production CI/CD), you must NOT hardcode Firebase login.
+// Instead, store your Firebase token or service account key in Jenkins Credentials
+// (e.g., "Secret Text" or "Secret File") and load it as an environment variable.
+// Example: withCredentials([string(credentialsId: 'firebase-token',
 pipeline {
     agent any
 
@@ -28,9 +34,11 @@ pipeline {
         stage('Production') {
             steps {
                 echo 'Deploying to Firebase Hosting...'
-                sh 'firebase use production'
+                sh 'firebase use statingkelowna-10026'
                 sh 'firebase deploy --only hosting --token $FIREBASE_TOKEN'
             }
         }
     }
 }
+
+
