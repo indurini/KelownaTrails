@@ -150,10 +150,20 @@ function AddGroupMember(lastName, firstName) {
 * Function to remove (delete) a selected group member from the selection list.
 * 
 */
-function RemoveGroupMember() {
+/*function RemoveGroupMember() {
 
 	throw "ERROR! You must work in this function before to send to Staging Environment!";
 
+}*/
+/*
+* Function to remove (delete) a selected group member from the selection list.
+*/
+function RemoveGroupMember() {
+    if (membersLst.selectedIndex !== -1) {
+        membersLst.remove(membersLst.selectedIndex);
+    } else {
+        alert("Please select a member to delete.");
+    }
 }
 
 /*
